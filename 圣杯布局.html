@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>圣杯布局</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    body{text-align: center;}
+    header,footer{width: 100%;background: #999;}
+    #left,#right{background: #eee;}
+    #container .column {height: 500px;}
+    
+    /* 圣杯布局 */
+    body{min-width: 600px;}
+    #container {
+      padding-left: 200px; 
+      padding-right: 200px;
+    }
+    #container .column {
+      float: left;
+    }
+
+    #center {
+      width: 100%;
+    }
+
+    #left {
+      width: 200px; 
+      margin-left: -100%;
+      position: relative;
+      right: 200px;
+    }
+
+    #right {
+      width: 200px; 
+      margin-right: -100%; 
+    }
+
+    footer {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <header>header</header>
+  <div id="container">
+    <div id="center" class="column">
+      #center<br/>float: left;<br/>width:100%;
+    </div>
+    <div id="left" class="column">
+      #left<br/>float: left;<br/>width:200px;<br/>margin-left: -100%;<br/>position: relative;<br/>right: 200px;
+    </div>
+    <div id="right" class="column">
+      #right<br/>float: left;<br/>width:200px;<br/>margin-right: -200px; 
+    </div>
+  </div>
+  <footer>footer</footer>
+ 
+
+</body>
+</html>

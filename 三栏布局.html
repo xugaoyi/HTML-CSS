@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>三栏布局</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    body{min-width: 500px;}
+    section{min-height: 100px; margin-bottom: 30px;}
+    article div{min-height: 100px;}
+  </style>
+</head>
+<body>
+  <section class="layout float">
+    <style>
+      .layout.float .left{
+        float: left;
+        width: 200px;
+        background: blue;
+      }
+      .layout.float .right{
+        float: right;
+        width: 200px;
+        background: red;
+      }
+      .layout.float .center{
+        background: yellow;
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+          <h1>浮动解决方案</h1>
+          优点：兼容性好<br/>
+          缺点：脱离文档流，需要给周边元素清除浮动
+
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+      </div>
+    </article>
+  </section>
+
+
+  <section class="layout absolute">
+    <style>
+      .layout.absolute .container>div{
+        position: absolute
+      }
+      .layout.absolute .left{
+        left: 0;
+        width: 200px;
+        background: blue
+      }
+      .layout.absolute .center{
+        left: 200px;
+        right: 200px;
+        background: yellow
+      }
+      .layout.absolute .right{
+        right: 0;
+        width: 200px;
+        background: red
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+          <h1>绝对定位解决方案</h1>
+          优点：快捷<br/>
+          缺点：脱离文档流，子元素也会脱离文档流
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+
+  <section class="layout flexbox">
+    <style>
+      .layout.flexbox .container{
+        display: flex;
+      }
+      .layout.flexbox .left{
+        width: 200px;
+        background: blue
+      }
+      .layout.flexbox .center{
+        flex: 1;
+        background: yellow
+      }
+      .layout.flexbox .right{
+        width: 200px;
+        background: red
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+          <h1>flex解决方案</h1>
+          优点：不会脱离文档流<br/>
+          缺点：css3样式，对低版本浏览器兼容性不好
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+
+
+  <section class="layout table">
+    <style>
+      .layout.table .container{
+        width: 100%;
+        display: table;
+        height: 100px;
+      }
+      .layout.table .container>div{
+        display: table-cell;
+      }
+      .layout.table .left{
+        width: 200px;
+        background: blue
+      }
+      .layout.table .center{
+        background: yellow
+      }
+      .layout.table .right{
+        width: 200px;
+        background: red
+      }
+    </style>
+    <article class="container">
+      <div class="left"></div>
+      <div class="center">
+          <h1>table解决方案</h1>
+          优点：兼容性好<br/>
+          缺点：每个table-cell高度一致
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+
+  <section class="layout grid">
+      <style>
+        .layout.grid .container{
+          width: 100%;
+          display: grid;
+          grid-template-rows: 100px;
+          grid-template-columns: 200px auto 200px;
+        }
+        .layout.grid .left{
+          background: blue
+        }
+        .layout.grid .center{
+          background: yellow
+        }
+        .layout.grid .right{
+          background: red
+        }
+      </style>
+      <article class="container">
+        <div class="left"></div>
+        <div class="center">
+          <h1>网格布局解决方案</h1>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+
+
+    <section class="layout calc">
+      <style>
+        .layout.calc .container>div{
+          float: left;
+        }
+        .layout.calc .left{
+          width: 200px;
+          background: blue
+        }
+        .layout.calc .center{
+          width: calc(100% - 400px);
+          background: yellow
+        }
+        .layout.calc .right{
+          width: 200px;
+          background: red
+        }
+      </style>
+      <article class="container">
+        <div class="left"></div>
+        <div class="center">
+          <h1>calc解决方案</h1>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+          <p>增加高度</p>
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+
+
+
+    <section class="layout borderbox">
+        <style>
+          .layout.borderbox .container>div{
+            float: left;
+          }
+          .layout.borderbox .left{
+            width: 200px;
+            background: blue
+          }
+          .layout.borderbox .center{
+            padding-left: 200px;
+            padding-right: 200px;
+            box-sizing: border-box;
+            width: 100%;
+            background: yellow
+          }
+          .layout.borderbox .right{
+            width: 200px;
+            background: red
+          }
+        </style>
+        <article class="container">
+          <div class="left"></div>
+          <div class="center">
+            <h1>border-box解决方案</h1>
+            <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p>
+          </div>
+          <div class="right"></div>
+        </article>
+      </section>
+</body>
+</html>

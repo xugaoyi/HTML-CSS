@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS水平居中+垂直居中+水平/垂直居中的方法总结</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    .level,.vertical,.levelVertical {float: left;margin:20px;}
+    .wrapper{width: 300px;height: 200px;background:#eee;margin-bottom: 20px;}
+    .wrapper>div{background: coral;}
+  </style>
+</head>
+<body>
+  <div class="level">
+    <h1>水平居中</h1>
+    
+    <style>
+      .wrapper1{text-align: center;}
+    </style>
+    <div class="wrapper wrapper1">
+      <span>行内元素，text-align: center;</span>
+    </div>
+
+
+    <style>
+      .wrapper2 div{width:150px;margin: 0 auto;}
+    </style>
+    <div class="wrapper wrapper2">
+      <div>
+        块级元素
+        <p>（定宽度）</p>
+        <p>margin: 0 auto</p>
+      </div>
+    </div>
+
+    <style>
+      .wrapper3{text-align: center;}
+      .wrapper3 div{display: inline;}
+    </style>
+    <div class="wrapper wrapper3">
+      <div>块级元素（不定宽度）</div>
+    </div>
+
+
+    <style>
+      .wrapper4{display: flex;justify-content: center;}
+      /* .wrapper4 div{width: 100px;} */
+    </style>
+    <div class="wrapper wrapper4">
+      <div>
+        块级元素
+        <p>flex实现</p>
+        <p>（定不定宽度可以）</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="vertical">
+      <h1>垂直居中</h1>
+      
+      <style>
+        .wrapper5{line-height: 200px;}
+      </style>
+      <div class="wrapper wrapper5">
+        <span>单行的行内元素，设置行高</span>
+      </div>
+  
+  
+      <style>
+        .wrapper6{display: table-cell;vertical-align:middle;}
+      </style>
+      <div class="wrapper wrapper6">
+          <span>多行的行内元素，多行的行内元素，多行的行内元素，多行的行内元素，多行的行内元素，多行的行内元素，多行的行内元素，多行的行内元素</span>
+      </div>
+      <br/>
+
+      
+      <style>
+        .wrapper7{position: relative;}
+        .wrapper7 div{height: 100px;position: absolute;top: 50%; margin-top: -50px;}
+      </style>
+      <div class="wrapper wrapper7">
+        <div>块级元素（定高度）</div>
+      </div>
+  
+  
+      <style>
+        .wrapper8{display: flex;align-items: center;}
+      </style>
+      <div class="wrapper wrapper8">
+        <div>
+          块级元素
+          <p>flex实现</p>
+          <p>（定不定高度可以）</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="levelVertical">
+      <h1>水平垂直居中</h1>
+
+      <style>
+        .wrapper9{position: relative;}
+        .wrapper9 div{
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+        }
+      </style>
+      <div class="wrapper wrapper9">
+        <div>
+          块级元素
+          <p>已知宽高</p>
+        </div>
+      </div>
+  
+  
+      <style>
+        .wrapper10{position: relative;}
+        .wrapper10 div{
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-left: -50px;
+          margin-top: -50px;
+        }
+      </style>
+      <div class="wrapper wrapper10">
+        <div>
+          块级元素
+          <p>已知宽高</p>
+        </div>   
+      </div>
+
+      
+      <style>
+        .wrapper11{position: relative;}
+        .wrapper11 div{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+      </style>
+      <div class="wrapper wrapper11">
+        <div>
+          块级元素
+          <p>未知宽高</p>
+        </div>   
+      </div>
+
+      <style>
+        .wrapper12{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      </style>
+      <div class="wrapper wrapper12">
+        <div>
+          块级元素
+          <p>flex实现</p>
+          <p>未知宽高</p>
+        </div>   
+      </div>
+
+    </div>
+</body>
+</html>
