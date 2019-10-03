@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex布局案例-输入框布局</title>
+  <style>
+    .InputAddOn {
+      display: flex;
+    }
+
+    .InputAddOn-field {
+      flex: 1;
+    }
+
+
+
+
+
+    .Media {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .Media-figure {
+      width: 50px;
+      height: 50px;
+      background: #eee;
+      margin: 0 1em;
+    }
+
+    .Media-body {
+      flex: 1;
+    }
+
+
+    /* 基础样式 */
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    input:-webkit-autofill,
+    select:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    }
+
+    input {
+      outline-color: invert;
+      outline-style: none;
+      outline-width: 0px;
+      text-shadow: none;
+      -webkit-appearance: none;
+      -webkit-user-select: text;
+      outline-color: transparent;
+      box-shadow: none;
+    }
+
+    .InputAddOn {
+      margin: 10px;
+    }
+
+    .InputAddOn-item {
+      width: 100px;
+      text-align: center;
+      line-height: 30px;
+      border: 1px solid #ccc;
+      background: #eee
+    }
+
+    .InputAddOn-field {
+      height: 30px;
+      border: 1px solid #ccc;
+      border-left: none;
+      border-right: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="InputAddOn">
+    <span class="InputAddOn-item">icon</span>
+    <input class="InputAddOn-field">
+    <button class="InputAddOn-item">提交</button>
+  </div>
+
+
+  <div class="Media">
+    <div class="Media-figure">左侧固定</div>
+    <p class="Media-body">右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应</p>
+  </div>
+</body>
+
+</html>
